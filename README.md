@@ -51,6 +51,11 @@ Currently, my vision is as follows:
 - This data should be available in a CSV file, which can be aquired from a database like influxDB
 - It will be difficult to get accurate timeseries weather data without a cloud service
 - The ideal solution would only use a weather station in your garden that collects relevant data
+- To predict solar output, we input the previous timeseries data into the model and output a prediction for the next time step(s).  
+
+This could be an option:
+- If the user has historical PV output data, we can use it to train a custom model which can be deployed on the Home Assistant server. This seems to be the preferred method but it will require more setup.
+- If the user doesn't have historical PV output data we can use the 'generic' model for inference. Question is, where do we get this data? Perhapse [4] can help?
 
 ## References
 See:
@@ -59,5 +64,6 @@ See:
 - [2] [Awesome Energy Forecasting](https://github.com/cuge1995/awesome-energy-forecasting)
 - [3] [Photovoltaic system derived data for determining the solar resource and
 for modeling the performance of other photovoltaic systems](https://isiarticles.com/bundles/Article/pre/pdf/138552.pdf)
+- [4] [PVoutput](https://pvoutput.org/)
 
 
