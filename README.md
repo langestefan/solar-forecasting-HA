@@ -18,7 +18,7 @@ So in the true spirit of Home Assistant, we want to have solar forecasting with 
 Local forecasting means that the logic to predict solar panel output resides on the Home Assistant server. 
 
 ## Featureset
-The following features can be used to predict solar output:
+The following features can be used to predict solar output, see also [1]:
 - Downwelling global solar (Watts/m^2)
 - Upwelling global solar (Watts/ m^2)
 - Directnormal solar (Watts/ m^2)
@@ -47,7 +47,9 @@ On top of this, we can use the featureset available from the solar installation 
 ## References
 See:
 
-- [Multi-time-horizon Solar Forecasting Using Recurrent Neural Network](https://arxiv.org/abs/1807.05459)
-- [Awesome Energy Forecasting](https://github.com/cuge1995/awesome-energy-forecasting)
+- [1] [Multi-time-horizon Solar Forecasting Using Recurrent Neural Network](https://arxiv.org/abs/1807.05459)
+- [2] [Awesome Energy Forecasting](https://github.com/cuge1995/awesome-energy-forecasting)
+- [3] [Photovoltaic system derived data for determining the solar resource and
+for modeling the performance of other photovoltaic systems](https://isiarticles.com/bundles/Article/pre/pdf/138552.pdf)
 
 
