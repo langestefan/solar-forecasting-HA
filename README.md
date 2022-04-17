@@ -19,19 +19,28 @@ Local forecasting means that the logic to predict solar panel output resides on 
 
 ## Featureset
 The following features can be used to predict solar output:
-- Horizontal Irradiance
-- Humidity
-- Temperature
-- Wind Speed
-- Wind Direction
-- Cloud Cover
-- Precipitation
-- Pressure
-- Solar Zenith Angle
-- Solar Azimuth Angle
-- Solar Altitude Angle
-- Solar Declination Angle
-- Etc.
+- Downwelling global solar (Watts/m^2)
+- Upwelling global solar (Watts/ m^2)
+- Directnormal solar (Watts/ m^2)
+- Downwelling diffuse solar (Watts/m^2)
+- Downwelling thermal infrared (Watts/ m^2)
+- Downwelling IR case temp. (K) 
+- Downwelling IR dome temp. (K) 
+- Upwelling thermal infrared (Watts/ m^2)
+- Upwelling IR case temp. (K)
+- Upwelling IR dome temp. (K)
+- Global UVB (milliWatts/ m^2)
+- photosynthetically active radiation (Watts/m^2) 
+- Net solar (dw_solar - uw_solar) (Watts/ m^2)
+- Net infrared (dw_ir - uw_ir) (Watts/ m^2)
+- Net radiation (netsolar+netir) (Watts/ m^2)
+- 10-meter air temperature (C)
+- Relative humidity (%)
+- Wind speed (ms^1)
+- Wind direction (degrees, clockwise from north)
+- Station pressure (mb)
+
+On top of this, we can use the featureset available from the solar installation itself. The most important feature is the solar panel output in watts. This will be used to train the time series model and also serve as a baseline for the prediction.
 
 ## Configurable prediction horizon
 
