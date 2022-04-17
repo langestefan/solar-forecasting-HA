@@ -44,6 +44,14 @@ On top of this, we can use the featureset available from the solar installation 
 
 ## Configurable prediction horizon
 
+## Setup
+Currently, my vision is as follows:
+- A user has a solar installation with historical data, preferably detailed data over 1 or more years
+- If detailed data is not available, the model will be less accurate but it should still be possible to use it
+- This data should be available in a CSV file, which can be aquired from a database like influxDB
+- It will be difficult to get accurate timeseries weather data without a cloud service
+- The ideal solution would only use a weather station in your garden that collects relevant data
+
 ## References
 See:
 
