@@ -44,6 +44,9 @@ On top of this, we can use the featureset available from the solar installation 
 
 ## Configurable prediction horizon
 
+## On-line learning
+We can make it possible to continuously improve the model by enabling on-line learning. We can have a 'very well' trained model that we train in the cloud on GPU's. This model can then continue to train once deployed. The training will happen by feeding in the solar site data and updating the model's parameters accordingly. This should yield superior performance. 
+
 ## Setup
 Currently, my vision is as follows:
 - A user has a solar installation with historical data, preferably detailed data over 1 or more years
