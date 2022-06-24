@@ -68,5 +68,6 @@ See:
 - [3] [Photovoltaic system derived data for determining the solar resource and
 for modeling the performance of other photovoltaic systems](https://isiarticles.com/bundles/Article/pre/pdf/138552.pdf)
 - [4] [PVoutput](https://pvoutput.org/)
+- [5] [nvidia time series](https://www.kaggle.com/code/anmolgupta11090/jpx-tokyo-stock-prediction-with-nvidia-tspp/notebook?ncid=so-link-274481-vt27&=&linkId=100000132389550#cid=an01_so-link_en-us)
 
 
