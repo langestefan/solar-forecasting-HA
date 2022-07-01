@@ -51,6 +51,9 @@ On top of this, we can use the featureset available from the solar installation 
 
 ## Configurable prediction horizon
 
+## On-line learning
+We can make it possible to continuously improve the model by enabling on-line learning. We can have a 'very well' trained model that we train in the cloud on GPU's. This model can then continue to train once deployed. The training will happen by feeding in the solar site data and updating the model's parameters accordingly. This should yield superior performance. 
+
 ## Setup
 
 Currently, my vision is as follows:
@@ -91,5 +94,6 @@ for modeling the performance of other photovoltaic systems](https://isiarticles.
 - [4] [PVoutput](https://pvoutput.org/)
 - [5] [LSTM explanation](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 - [6] [Multi Step Time Series Forecasting](https://machinelearningmastery.com/multi-step-time-series-forecasting/)
+- [7] [nvidia time series](https://www.kaggle.com/code/anmolgupta11090/jpx-tokyo-stock-prediction-with-nvidia-tspp/notebook?ncid=so-link-274481-vt27&=&linkId=100000132389550#cid=an01_so-link_en-us)
 
 
