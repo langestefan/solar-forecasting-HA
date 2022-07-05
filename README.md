@@ -2,18 +2,19 @@
 
 ## What's the purpose of this project?
 
-The purpose of this project is to provide a simple way to forecast solar energy production for your [Home Assistant](https://home-assistant.io/) installation using a minimal and ideally zero set of cloud API's.
+The purpose of this project is to provide a simple way to forecast solar energy production for your [Home Assistant](https://home-assistant.io/) installation using a minimal (and ideally zero) set of cloud API's.
 
 ## Why is this needed?
 
-There are atleast two addons that I know of that provide solar forecasting information, [SolCast](https://github.com/oziee/ha-solcast-solar) and [forecast.solar](https://www.home-assistant.io/integrations/forecast_solar/). Of these two, SolCast seems to be the most accurate. However, it does not have a native integration and it's free API has a very limited amount of calls. I have also tried forecast.solar and found it's accuracy is severely lacking.
+There are atleast two addons that I know of that provide solar forecasting information, [SolCast](https://github.com/oziee/ha-solcast-solar) and [forecast.solar](https://www.home-assistant.io/integrations/forecast_solar/). Of these two SolCast seems to be the most accurate. However, it does not have a native integration and its free API supports only a very limited amount of calls per day. I have also tried forecast.solar and found its accuracy is severely lacking, the mean error is too high to support time sensitive applications.
 
-On top of this there is no guarantee that forecast.solar will remain operational in the future, as is the case with any cloud service. An increasing dependence on renewebles also means an increasing dependence on services that provide vital data to your home. I would like to schedule my heavy electricity consumers such that I maximize the utility of my solar panels, doing so at the optimal time every day may save me hundreds of euros on a yearly basis, especially at these energy prices.
+![forecast_solar_bad](https://user-images.githubusercontent.com/37669773/177314734-06e50bbc-861a-45d5-889e-f0ab3490c899.png)
 
-For example:
+On top of this there is no guarantee that forecast.solar will remain operational in the future, as is the case with any (and especially free) cloud service. As the electricity grid moves away from fossil fuels the dependency on intermittent renewables increases. Usage of these new and unreliable electricity sources also means an increasing dependency on services that provide critical data. This data can be used to schedule your home appliances during peak solar hours in order to maximize available solar energy self consumption, leading to lower carbon emissions and a lower energy bill. I would like to schedule my heavy electricity consumers such that I maximize the utility of my solar panels, doing so at the optimal time every day may save me hundreds of euros on a yearly basis, especially at current energy rates.
+
+Examples include:
 
 - Charging an electric car
-
 - Powering the washing machine
 
 So in the true spirit of Home Assistant, we want to have solar forecasting with maximum locality and accuracy and as little reliance on cloud services as possible.
@@ -24,7 +25,7 @@ Local forecasting means that the logic to predict solar panel output resides on 
 
 ## Featureset
 
-The following features can be used to predict solar output, see also [1]:
+The following features can be used to predict solar output, see also [1] and [4]:
 
 - Downwelling global solar (Watts/m^2)
 - Upwelling global solar (Watts/ m^2)
@@ -56,19 +57,9 @@ We can make it possible to continuously improve the model by enabling on-line le
 
 ## Setup
 
-Currently, my vision is as follows:
-
-- A user has a solar installation with historical data, preferably detailed data over 1 or more years
-- If detailed data is not available, the model will be less accurate but it should still be possible to use it
-- This data should be available in a CSV file, which can be aquired from a database like influxDB
-- It will be difficult to get accurate timeseries weather data without a cloud service
-- The ideal solution would only use a weather station in your garden that collects relevant data
-- To predict solar output, we input the previous timeseries data into the model and output a prediction for the next time step(s).  
-
-This could be an option:
-
-- If the user has historical PV output data, we can use it to train a custom model which can be deployed on the Home Assistant server. This seems to be the preferred method but it will require more setup.
-- If the user doesn't have historical PV output data we can use the 'generic' model for inference. Question is, where do we get this data? Perhapse [4] can help?
+- A user has a solar installation with historical data of about 2 days, preferable at interval of 30 seconds. 
+- The ideal setup would use a weather station situated in your garden to provide the model with the necessary atmospheric and meteorological data. 
+- To predict solar output, we input timeseries data into the model and output a prediction for the next time step(s).   
 
 ## Retrieve data from InfluxDB
 
